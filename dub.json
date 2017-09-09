@@ -1,0 +1,13 @@
+{
+	"name": "pdcurses-d",
+	"authors": [
+		"unleashy"
+	],
+	"description": "D bindings for PDCurses",
+	"copyright": "Copyright © 2017, unleashy",
+	"license": "MIT",
+    "targetType": "library",
+    
+    "libs": ["pdcurses"],
+    "libs-windows": ["user32", "advapi32"]
+}

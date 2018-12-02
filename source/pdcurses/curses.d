@@ -1179,6 +1179,44 @@ auto PAIR_NUMBER(T)(auto ref T n)
 
 /* These will _only_ work as macros */
 
+extern (D) pragma (inline, true)
+void getbegyx(WINDOW *w, ref int y, ref int x)
+{
+    y = getbegy(w);
+    x = getbegx(w);
+}
+
+extern (D) pragma (inline, true)
+void getmaxyx(WINDOW *w, ref int y, ref int x)
+{
+    y = getmaxy(w);
+    x = getmaxx(w);
+}
+
+extern (D) pragma (inline, true)
+void getparyx(WINDOW *w, ref int y, ref int x)
+{
+    y = getpary(w);
+    x = getparx(w);
+}
+
+extern (D) pragma (inline, true)
+void getyx(WINDOW *w, ref int y, ref int x)
+{
+    y = getcury(w);
+    x = getcurx(w);
+}
+
+extern (D) pragma (inline, true)
+void getsyx(ref int y, ref int x)
+{
+    if (curscr._leaveit) {
+        y = x = -1;
+    } else {
+        getyx(curscr, y, x);
+    }
+}
+
 /* return codes from PDC_getclipboard() and PDC_setclipboard() calls */
 
 enum PDC_CLIP_SUCCESS = 0;

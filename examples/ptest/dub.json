@@ -1,0 +1,13 @@
+{
+    "name":         "ptest",
+    "description":  "Example application for the D pdcurses bindings",
+    "authors": [
+                    "Mark Hessling",
+                    "William McBrine",
+                    "Joachim de Groot"
+    ],
+    "license":      "ncurses",
+    "dependencies": {
+        "pdcurses-d": { "path": "../../" }
+    }
+}
